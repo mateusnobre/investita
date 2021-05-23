@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'companies.apps.CompaniesConfig',
     'rest_framework',
     'frontend',
-    'django-heroku',
 ]
 
 MIDDLEWARE = [
