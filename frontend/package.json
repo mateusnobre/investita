@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --entry ./src/index.js --output-path ./static/frontend",
-    "build": "webpack --mode production --entry ./src/index.js --output-path ./static/frontend"
+    "build": "webpack --mode production --entry ./src/index.js --output-path ./static/frontend",
+    "start:dev": "webpack serve --mode production --entry ./src/index.js --output-path ./static/frontend --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -19,13 +20,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "webpack": "^5.37.1",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "engines": {
     "node": "14.6.1",
     "npm": "7.14.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1"
   }
 }
