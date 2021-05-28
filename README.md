@@ -31,8 +31,13 @@ To run migrations
 docker-compose exec web python manage.py migrate 
 ```
 
-To build the app production version
+Install npm packages
+```
+docker-compose exec web npm i package_name --prefix ./frontend/
 ```
 
+
+To build the app production version
+```
 docker-compose exec web yarn run build --prefix ./frontend/
 ```
