@@ -1,34 +1,40 @@
 import React from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: '#222222',
-  },
-}));
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import SignIn  from './components/SignIn';
+import SignUp  from './components/SignUp';
+import Home from './components/Home';
+import MyAccount from './components/MyAccount';
+import Wallet from './components/Wallet';
+import Stats from './components/Stats';
+import Asset from './components/Asset';
 
 function App() {
- const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid classname={classes.grid} item xs={2}>
-          fff
-        </Grid>
-        <Grid classname={classes.grid} item xs={10}>
-          9868
-        </Grid>
-      </Grid>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/sign-in" exact>
+          <SignIn></SignIn>
+        </Route>
+        <Route path="/sign-up" exact>
+          <SignUp></SignUp>
+        </Route>
+        <Route path="/" exact>
+          <Home></Home>
+        </Route>
+        <Route path="/my-account" exact>
+          <MyAccount/>
+        </Route>
+        <Route path="/wallet" exact>
+          <Wallet/>
+        </Route>
+        <Route path="/stats" exact>
+          <Stats></Stats>
+        </Route>
+        <Route path="/asset/:id" exact>
+          <Asset></Asset>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
