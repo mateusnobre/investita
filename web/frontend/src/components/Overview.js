@@ -2,11 +2,11 @@ import styled from "styled-components";
 import React from 'react'
 import TimeSeriesChart from './TimeSeriesChart'
 import Asset from './Asset'
-
+import Ad from "./Ad";
 export default function Overview(){
     return(
         <OverviewBox>
-            Overview
+            <Title>Overview</Title>
             <TopBox>
                 <PortfolioBox>
                     Portfolio
@@ -22,7 +22,10 @@ export default function Overview(){
                 </MyAssetsBox>
                 </TopBox>
             <BottomBox>
-                as
+                <InfoTable>
+                    Market is down 0.80%
+                </InfoTable>
+                <Ad/>
             </BottomBox>
         </OverviewBox>
     )
@@ -31,11 +34,32 @@ export default function Overview(){
 const OverviewBox = styled.div`
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 30px;
     margin-left: 10vw;
+    margin-right: 10px;
+    padding-right: 10px;
+    width: 90%;
     font-weight: 700;
     font-size: 30px;
     align-items: flex-start;
+    justify-content: space-between;
     padding-left: 20px;
+    margin-top: 10px;
+`
+const Title = styled.div`
+    margin-top: 20px;
+    margin-bottom: 20px
+`
+const TopBox = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+`
+const BottomBox = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 `
 const PortfolioBox = styled.div`
     display: flex;
@@ -54,11 +78,12 @@ const MyAssetsBox = styled.div`
 `
 const AssetsBox = styled.div`
     display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    overflow-x: scroll;
 `
-const TopBox = styled.div`
+const InfoTable = styled.div`
     display: flex;
-    width: 80vw;
-`
-const BottomBox = styled.div`
-    display: flex;
+    flex-direction: space-between;
 `

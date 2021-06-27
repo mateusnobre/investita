@@ -17,8 +17,8 @@ export default function Asset(){
 const AssetBox = styled.div`
     display: flex;
     position: relative;
-    width: 150px;
-    height: 210px;
+    width: 300px;
+    height: 35vh;
     border-radius: 10px;
     background-color: aliceblue;
     margin-right: 15px;

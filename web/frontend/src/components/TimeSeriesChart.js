@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components"
-
 export default function TimeSeriesChart(){
     return(
         <TimeSeriesChartBox>
@@ -11,8 +10,9 @@ export default function TimeSeriesChart(){
 
 const TimeSeriesChartBox = styled.div`
     display: flex;
-    width: 510px;
-    height: 210px;
+    width: 100%;
+    height: 35vh;
     border-radius: 10px;
     background-color: aliceblue;
+    margin-top: 10px;
 `
