@@ -1,6 +1,5 @@
 import React from 'react';
-import { BsGrid } from 'react-icons/bs';
-import { BiWallet, BiLogOut } from 'react-icons/bi';
+import { BiLogOut } from 'react-icons/bi';
 import { FiUser } from 'react-icons/fi';
 import { IoStatsChartOutline, IoWalletOutline } from 'react-icons/io5';
 import { AiOutlineHome } from 'react-icons/ai';
@@ -8,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import { withStyles } from '@material-ui/core/styles';
 import colors from './Styles'
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 
 const SideBox = withStyles({
   root: {
@@ -18,7 +18,7 @@ const SideBox = withStyles({
     justifyContent: 'space-around',
     color: 'white',
     position: 'fixed',
-    width: '20%',
+    width: '10vw',
     height: '100%',
     left: 0,
   },
@@ -27,55 +27,34 @@ const SideBox = withStyles({
   },
 })(Box);
 
-const IconBox = withStyles({
-  root: {
-    background: colors.GRAY,
-    display: 'flex',
-    flexDirection: 'column',
-    color: colors.DARK_2ND,
-    marginTop: '5px',
-    marginBottom: '5px',
-    width: '40px',
-    height: '40px',
-    borderRadius: '10px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-})(Box);
+const MainCoinsBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+`
 
 
 export default function Side(){
     return(
         <SideBox>
-            <IconBox>
-                <Link to= '/'>
-                    <AiOutlineHome size={20}/>
-                </Link>
-            </IconBox>
-            <IconBox>
+            <Link to= '/'>
+                <AiOutlineHome color='grey' size={35}/>
+            </Link>
+            <MainCoinsBox>
                 <Link to= '/wallet'>
-                    <IoWalletOutline size={20}/>
+                    <IoWalletOutline color='white'  size={30}/>
                 </Link>
-            </IconBox>
-            <IconBox>
                 <Link to= '/stats'>
-                    <IoStatsChartOutline size={20}/>
+                    <IoStatsChartOutline color='white'  size={30}/>
                 </Link>
-            </IconBox>
-            <IconBox>
                 <Link to= '/my-account'>
-                    <FiUser size={20}/>
+                    <FiUser color='white'  size={30}/>
                 </Link>
-            </IconBox>
-            <IconBox>
-                <Link to= '/sign-in'>
-                    <BiLogOut size={20}/>
-                </Link>
-            </IconBox>
+            </MainCoinsBox>
+            <Link to= '/sign-in'>
+                <BiLogOut color='grey'  size={25}/>
+            </Link>
         </SideBox>
     )
 }
