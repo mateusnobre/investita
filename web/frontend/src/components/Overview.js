@@ -15,9 +15,7 @@ export default function Overview(){
                 <MyAssetsBox>
                     Your Assets
                     <AssetsBox>
-                        <Asset name='Bitcoin'/>
-                        <Asset name='Ethereum'/>
-                        <Asset name='Dogecoin'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
                     </AssetsBox>
                 </MyAssetsBox>
                 </TopBox>
@@ -25,7 +23,6 @@ export default function Overview(){
                 <InfoTable>
                     Market is down 0.80%
                 </InfoTable>
-                <Ad/>
             </BottomBox>
         </OverviewBox>
     )
@@ -86,4 +83,5 @@ const AssetsBox = styled.div`
 const InfoTable = styled.div`
     display: flex;
     flex-direction: space-between;
+    height: 35vh;
 `
