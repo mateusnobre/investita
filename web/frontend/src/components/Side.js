@@ -42,14 +42,14 @@ export default function Side(){
                 <AiOutlineHome color='grey' size={35}/>
             </Link>
             <MainCoinsBox>
-                <Link to= '/wallet'>
+                <Link to= '/my-portfolio'>
                     <IoWalletOutline color='white'  size={30}/>
                 </Link>
-                <Link to= '/stats'>
-                    <IoStatsChartOutline color='white'  size={30}/>
-                </Link>
-                <Link to= '/my-account'>
+                <Link to= '/my-assets'>
                     <FiUser color='white'  size={30}/>
+                </Link>
+                <Link to= '/market-stats'>
+                    <IoStatsChartOutline color='white'  size={30}/>
                 </Link>
             </MainCoinsBox>
             <Link to= '/sign-in'>

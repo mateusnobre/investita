@@ -1,6 +1,6 @@
 import React from 'react';
-import Side from './Side';
-import Overview from './Overview'
+import Side from '../components/Side';
+import Overview from '../components/Overview'
 import styled from 'styled-components'
 
 export default function Home(){

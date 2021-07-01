@@ -1,19 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import SignIn  from './components/SignIn';
-import SignUp  from './components/SignUp';
-import Home from './components/Home';
-import MyAccount from './components/MyAccount';
-import Wallet from './components/Wallet';
-import Stats from './components/Stats';
-import Asset from './components/Asset';
+import Login from './pages/Login';
+import SignUp  from './pages/SignUp';
+import Home from './pages/Home';
+import MarketStats from './pages/MarketStats';
+import MyPorfolio from './pages/MyPortfolio';
+import MyAssets from './pages/MyAssets';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/sign-in" exact>
-          <SignIn></SignIn>
+        <Route path="/login" exact>
+          <Login></Login>
         </Route>
         <Route path="/sign-up" exact>
           <SignUp></SignUp>
@@ -21,17 +20,14 @@ function App() {
         <Route path="/" exact>
           <Home></Home>
         </Route>
-        <Route path="/my-account" exact>
-          <MyAccount/>
+        <Route path="/my-portfolio" exact>
+          <MyPorfolio/>
         </Route>
-        <Route path="/wallet" exact>
-          <Wallet/>
+        <Route path="/my-aassets" exact>
+          <MyAssets/>
         </Route>
-        <Route path="/stats" exact>
-          <Stats></Stats>
-        </Route>
-        <Route path="/asset/:id" exact>
-          <Asset></Asset>
+        <Route path="/market-stats" exact>
+          <MarketStats/>
         </Route>
       </Switch>
     </BrowserRouter>

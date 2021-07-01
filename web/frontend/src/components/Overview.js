@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React from 'react'
 import TimeSeriesChart from './TimeSeriesChart'
 import Asset from './Asset'
-import Ad from "./Ad";
 export default function Overview(){
     return(
         <OverviewBox>
@@ -15,6 +14,15 @@ export default function Overview(){
                 <MyAssetsBox>
                     Your Assets
                     <AssetsBox>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
+                        <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
                         <Asset name='BTC' volatility={0.14} quote='USD' rate={124.142}  icon='https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/f231d7382689406f9a50dde841418c64.png'/>
                     </AssetsBox>
                 </MyAssetsBox>
