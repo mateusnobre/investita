@@ -14,12 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from cryptocurrencies.views import CoinsViewSet
 
 from .views import FrontendAppView, test
 
+router = routers.DefaultRouter()
+router.register(r'cryptocurrencies', CoinsViewSet)
 urlpatterns = [
     path('api/test/', test),
     path('admin/', admin.site.urls),
-    path('', FrontendAppView.as_view())
+    path('', FrontendAppView.as_view()),
+    path('', include(router.urls))
 ]
