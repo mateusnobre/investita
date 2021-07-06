@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from cryptocurrencies.views import CoinsViewSet
+from users.views import UsersViewSet
 
 from .views import FrontendAppView, test
 
 router = routers.DefaultRouter()
 router.register(r'cryptocurrencies', CoinsViewSet)
+router.register(r'users', UsersViewSet)
+
 urlpatterns = [
     path('api/test/', test),
     path('admin/', admin.site.urls),
