@@ -52,7 +52,7 @@ export default function Side(){
                     <IoStatsChartOutline color='white'  size={30}/>
                 </Link>
             </MainCoinsBox>
-            <Link to= '/sign-in'>
+            <Link to= '/login'>
                 <BiLogOut color='grey'  size={25}/>
             </Link>
         </SideBox>

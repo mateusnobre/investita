@@ -7,6 +7,9 @@ import MarketStats from './pages/MarketStats';
 import MyPorfolio from './pages/MyPortfolio';
 import MyAssets from './pages/MyAssets';
 
+import './assets/styles/reset.css';
+import './assets/styles/style.css';
+
 function App() {
   return (
     <BrowserRouter>
