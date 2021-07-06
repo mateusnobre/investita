@@ -23,8 +23,7 @@ export default function Overview(){
                   "icon" :  "some_icon"
                 }
                 newCoins.push(body)
-                console.log(body)
-            }
+             }
         }
         setCoins(newCoins)
     }, [])

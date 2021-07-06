@@ -3,7 +3,6 @@ import Input from './Input'
 import styled from 'styled-components'
 import FormsButton from './FormsButton'
 import { useHistory } from 'react-router-dom'
-import axios from 'axios'
 import React from 'react'
 
 export default function SignUpForm(){
@@ -23,16 +22,7 @@ export default function SignUpForm(){
                 alert('As senhas não são iguais')
             }
             else {
-                const response =  axios.post('http://localhost:4000/sign-up', {
-                name: name,
-                email: email,
-                password: password
-                })
-                .then(() => {
-                    localStorage.setItem('token', response.token);
-                    localStorage.setItem('user', JSON.stringify(response.name));
-                    history.push('/login');
-                })
+                history.push('/login');
             }
         }
     }

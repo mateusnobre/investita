@@ -1,12 +1,11 @@
 import React from 'react';
 import { BiLogOut } from 'react-icons/bi';
-import { FiUser } from 'react-icons/fi';
-import { IoStatsChartOutline, IoWalletOutline } from 'react-icons/io5';
+import { IoStatsChartOutline } from 'react-icons/io5';
 import { AiOutlineHome } from 'react-icons/ai';
 import Box from '@material-ui/core/Box';
 import { withStyles } from '@material-ui/core/styles';
 import colors from './Styles'
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 
 const SideBox = withStyles({
@@ -30,26 +29,24 @@ const SideBox = withStyles({
 const MainCoinsBox = styled.div`
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 100px;
     justify-content: space-between;
 `
 
 
 export default function Side(){
+    const history = useHistory()
     return(
         <SideBox>
-            <Link to= '/'>
+            <Link to= '/home' onClick={() => history.push('/home')} exact>
                 <AiOutlineHome color='grey' size={35}/>
             </Link>
             <MainCoinsBox>
-                <Link to= '/my-portfolio'>
-                    <IoWalletOutline color='white'  size={30}/>
-                </Link>
-                <Link to= '/market-stats'>
+                <Link to= '/market-stats' onClick={() => history.push('/market-stats')}>
                     <IoStatsChartOutline color='white'  size={30}/>
                 </Link>
             </MainCoinsBox>
-            <Link to= '/login'>
+            <Link to= '/login' onClick={() => history.push('/login')}>
                 <BiLogOut color='grey'  size={25}/>
             </Link>
         </SideBox>

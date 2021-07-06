@@ -1,13 +1,16 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import styled from "styled-components"
 import colors from './Styles'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis} from 'recharts'
+import config from './Token'
+import dayjs from 'dayjs'
+import axios from 'axios'
 
 function Chart(input){
     return(
         <LineChart id="Chart"
-                   width={500}
-                   height={400}
+                   width={1100}
+                   height={360}
                    data={input.data}
                    margin={{
                        top:35,
@@ -17,8 +20,8 @@ function Chart(input){
                    }}>
             <Line type="monotone" dataKey="uv" stoke="#8884d8" />
             <CartesianGrid stroke="#ccc" />
-            <XAxis dataKey="name" tick={{fontSize: 15}}/>
-            <YAxis tick={{fontSize: 15}}/>
+            <XAxis name='Date' dataKey="name" tick={{fontSize: 15}}/>
+            <YAxis name='BTC Traded Volume' tick={{fontSize: 15}}/>
         </LineChart>
     )
 }
@@ -26,43 +29,61 @@ function Chart(input){
 export default function TimeSeriesChart(){
 
     const [count, setCount] = useState(0);
-    const data1 = [{name: '04/07', uv: 400}, {name: '05/07', uv: 300}, {name: '06/07', uv: 225}];
-    const data2 = [{name: '30/06', uv: 350},{name: '01/07', uv: 500}, {name: '02/07', uv: 310}, {name: '03/07', uv: 225},{name: '04/07', uv: 400}, {name: '05/07', uv: 300}, {name: '06/07', uv: 225}];
-    const data3 = [{name: 'May', uv: 200}, {name: 'Jun', uv: 350}, {name: 'Jul', uv: 225}];
-    const data4 = [{name: 'Aug', uv: 150}, {name: 'Sep', uv: 190}, {name: 'Oct', uv: 180},{name: 'Nov', uv: 280}, {name: 'Dec', uv: 225}, {name: 'Jan', uv: 165},{name: 'Feb', uv: 190}, {name: 'Mar', uv: 250}, {name: 'Apr', uv: 180},{name: 'May', uv: 200}, {name: 'Jun', uv: 350}, {name: 'Jul', uv: 225}];
-    if(count === 0) var data = data1;
-    else if(count === 1) var data = data2;
-    else if(count === 2) var data = data3;
-    else var data = data4;
+    const [data, setData] = useState([]);
+    const [data_filtered,setDataFiltered] = useState([])
+    useEffect( () => {
+        const response = axios.get('https://rest.coinapi.io/v1/ohlcv/BTC/USD/history?period_id=1day&time_start=2019-06-01T00:00:00', config)
+        response.then( (res) => {
+            const historicalData = res.data;
+            let newData = []
+            for (let i = 0; i < historicalData.length; i++){
+                const body = {
+                  name: dayjs(historicalData[i].time_period_start).format('DD/MM/YY'),
+                  uv: historicalData[i].volume_traded
+                }
+                newData.push(body)
+            }
+            setData([...newData])
+        })
+        response.catch(
+            console.log('não rolou')
+        )
+        console.log(data_filtered)
+        }, [count])
     return(
         <TimeSeriesChartBox>
-            <tr>
-                <Button onClick={() => setCount(0)}>3d</Button>
-                <Button onClick={() => setCount(1)}>7d</Button>
-                <Button onClick={() => setCount(2)}>3m</Button>
-                <Button onClick={() => setCount(3)}>1y</Button>
-            </tr>
-            <tr>
-                <Chart data={data}/>
-            </tr>
+            <Chart data={data}/>
+            <ButtonBox>
+                <Button onClick={() => setCount(0)}>30d</Button>
+                <Button onClick={() => setCount(1)}>6m</Button>
+                <Button onClick={() => setCount(2)}>1y</Button>
+                <Button onClick={() => setCount(3)}>5y</Button>
+            </ButtonBox>
         </TimeSeriesChartBox>
     )
 }
 
 const TimeSeriesChartBox = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 35vh;
+    height: 380px;
     border-radius: 10px;
     background-color: aliceblue;
     margin-top: 10px;
 `
+
+const ButtonBox = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
 const Button = styled.button`
   background-color: ${colors.GREEN_2ND};
   color: black;
   font-size: 20px;
-  padding: 5px 15px;
   border-radius: 5px;
+  width: 50px;
   margin: 5px 5px;
   cursor: pointer;
 `;

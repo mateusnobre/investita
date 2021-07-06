@@ -23,19 +23,7 @@ export default function LoginForm(){
           alert("Prencha os campos");
         }
         else {
-            axios.post('http://localhost:8000/login', {
-                email: email,
-                password: password
-            }, config)
-            .then((res) => {
-                if (res.status === 201){
-                    localStorage.setItem('token', res.data.token);
-                    localStorage.setItem('user', JSON.stringify(res.data.name));
-                    history.push('/');
-                }})
-            .catch (() => {
-                alert("E-mail ou senha incorretos")
-            })
+          history.push('/home');
         }
     }
     return(
