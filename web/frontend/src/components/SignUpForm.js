@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Input from './Input'
 import styled from 'styled-components'
-import FormsButton from '../components/FormsButton'
+import FormsButton from './FormsButton'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import React from 'react'

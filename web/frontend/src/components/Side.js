@@ -45,9 +45,6 @@ export default function Side(){
                 <Link to= '/my-portfolio'>
                     <IoWalletOutline color='white'  size={30}/>
                 </Link>
-                <Link to= '/my-assets'>
-                    <FiUser color='white'  size={30}/>
-                </Link>
                 <Link to= '/market-stats'>
                     <IoStatsChartOutline color='white'  size={30}/>
                 </Link>

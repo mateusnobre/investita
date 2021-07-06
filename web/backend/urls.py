@@ -29,5 +29,5 @@ urlpatterns = [
     path('api/test/', test),
     path('admin/', admin.site.urls),
     path('', FrontendAppView.as_view()),
-    path('', include(router.urls))
+    path('api/', include(router.urls))
 ]

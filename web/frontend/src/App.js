@@ -5,7 +5,6 @@ import SignUp  from './pages/SignUp';
 import Home from './pages/Home';
 import MarketStats from './pages/MarketStats';
 import MyPorfolio from './pages/MyPortfolio';
-import MyAssets from './pages/MyAssets';
 
 import './assets/styles/reset.css';
 import './assets/styles/style.css';
@@ -25,9 +24,6 @@ function App() {
         </Route>
         <Route path="/my-portfolio" exact>
           <MyPorfolio/>
-        </Route>
-        <Route path="/my-aassets" exact>
-          <MyAssets/>
         </Route>
         <Route path="/market-stats" exact>
           <MarketStats/>

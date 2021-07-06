@@ -23,7 +23,7 @@ export default function LoginForm(){
           alert("Prencha os campos");
         }
         else {
-            axios.post('http://localhost:4000/login', {
+            axios.post('http://localhost:8000/login', {
                 email: email,
                 password: password
             }, config)

@@ -7,7 +7,7 @@ function Chart(input){
     return(
         <LineChart id="Chart"
                    width={500}
-                   height={240}
+                   height={400}
                    data={input.data}
                    margin={{
                        top:35,
