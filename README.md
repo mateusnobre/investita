@@ -1,4 +1,29 @@
-# React + Django + PostgreSQL + Docker Starter Kit
+# Investita
+
+A cryptocurrencies app to a user look for crypto data and beware  
+
+
+## Developers
+- Mateus Nobre
+- Gabriel Tostes
+- Jorge Márcio Lopes
+- Lucas Inamine
+- Otávio Henrique
+
+## Preview Login
+![image](web/misc/login.png)
+
+## Preview SignUp
+![image](web/misc/signup.png)
+
+## Preview Home
+![image](web/misc/home.png)
+
+## Preview MarketStats
+![image](web/misc/stats.png)
+
+
+## React + Django + PostgreSQL + Docker Starter Kit
 
 ## Development Setup (Docker)
 
